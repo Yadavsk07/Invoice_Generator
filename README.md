@@ -1,24 +1,58 @@
-# React + Vite
+# Invoice Generator (React + Vite + TailwindCSS)
 
-This project uses React with Vite and TailwindCSS for styling.
+An invoice generator frontend built with React and Vite, styled with TailwindCSS. It lets you create invoices, list saved invoices, and download polished PDFs.
 
-- Dev: `npm run dev`
-- Build: `npm run build`
-- Preview: `npm run preview`
+## Features
+- Create invoices with customer, items, tax, and totals
+- Persist and list saved invoices
+- Download invoice as PDF
+- Clean, responsive UI with TailwindCSS
 
-## Styling: TailwindCSS
-Tailwind is configured via `tailwind.config.js` and `postcss.config.js`.
-Global styles are in `src/index.css` with Tailwind directives.
+## Tech Stack
+- React 18 + Vite
+- TailwindCSS
 
-Content scanning paths: `index.html`, `src/**/*.{js,jsx,ts,tsx}`.
+## Getting Started
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Run in development:
+   ```bash
+   npm run dev
+   ```
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+4. Preview production build:
+   ```bash
+   npm run preview
+   ```
 
-## API URL
-Set `VITE_API_URL` in a `.env` at the project root to point to your backend (default `http://localhost:8080`).
+## Project Structure
+- `src/components/InvoiceForm.jsx`: Create invoices
+- `src/components/InvoiceList.jsx`: List and manage invoices
+- `src/Services/InvoiceServices.jsx`: Service utilities
+- `src/App.jsx`: App shell
 
+## Environment Variables
+If you have a backend API, set `VITE_API_URL` in a `.env` file at the project root.
 ```env
 VITE_API_URL=http://localhost:8080
 ```
 
-## Expanding the ESLint configuration
+## Deployment (Netlify)
+This project is deployed on Netlify. Since it’s a SPA, add a redirect so all routes serve `index.html`:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- File: `public/_redirects`
+  ```
+  /* /index.html 200
+  ```
+
+When deploying via Netlify:
+- Build command: `npm run build`
+- Publish directory: `dist`
+
+## License
+MIT
