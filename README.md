@@ -2,6 +2,8 @@
 
 An invoice generator frontend built with React and Vite, styled with TailwindCSS. It lets you create invoices, list saved invoices, and download polished PDFs.
 
+**Live Demo**: https://incandescent-profiterole-ecec33.netlify.app/
+
 ## Features
 - Create invoices with customer, items, tax, and totals
 - Persist and list saved invoices
